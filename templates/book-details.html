@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link href="https://fonts.googleapis.com/css?family=Megrim|Nunito+Sans:400,900" rel="stylesheet" />
+  <link rel="icon"
+    href="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/225/open-book_1f4d6.png" />
+  <title>book1 /// Books</title>
+
+  <style>
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: inherit;
+    }
+
+    html {
+      font-size: 62.5%;
+      box-sizing: border-box;
+    }
+
+    body {
+      padding: 5rem 5rem 10rem;
+      line-height: 1.7;
+      font-family: 'Nunito Sans', sans-serif;
+      color: #555;
+      min-height: 100vh;
+      background: #373B44;
+      /* fallback for old browsers */
+      background: -webkit-linear-gradient(to right, #4286f4, #373B44);
+      /* Chrome 10-25, Safari 5.1-6 */
+      background: linear-gradient(to right, #4286f4, #373B44);
+      /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    }
+
+    h1 {
+      font-family: 'Megrim', sans-serif;
+      font-size: 6rem;
+      color: white;
+      transform: skewY(-5deg);
+      text-align: center;
+      position: relative;
+      word-spacing: 3px;
+    }
+
+    .container {
+      width: 95rem;
+      margin: 0 auto;
+    }
+
+    .book {
+      width: 63rem;
+      margin: 0 auto;
+      margin-top: 9rem;
+      background: white;
+      box-shadow: 0 3rem 6rem 1rem rgba(0, 0, 0, 0.2);
+      position: relative;
+    }
+
+    .book__image {
+      position: relative;
+      height: 22rem;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .book__emoji {
+      font-size: 15rem;
+      position: absolute;
+    }
+
+    .book__ebook {
+      position: absolute;
+      top: -4rem;
+      right: -4rem;
+      z-index: 1000;
+      height: 11rem;
+      width: 11rem;
+      background: #373B44;
+      /* fallback for old browsers */
+      background: -webkit-linear-gradient(to right, #4286f4, #373B44);
+      /* Chrome 10-25, Safari 5.1-6 */
+      background: linear-gradient(to right, #4286f4, #373B44);
+      /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      border-radius: 50%;
+      transform: rotate(15deg);
+      box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .book__ebook h5 {
+      font-weight: 900;
+      text-transform: uppercase;
+      font-size: 1.8rem;
+      color: white;
+    }
+
+    .book__back:link,
+    .book__back:visited {
+      position: absolute;
+      top: 2rem;
+      left: 2rem;
+      font-size: 1.5rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      text-decoration: none;
+      z-index: 1000;
+      color: #555;
+      background-color: white;
+      box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.3);
+      border-radius: 100rem;
+      padding: 0 2rem;
+      transition: all 0.3s;
+      display: flex;
+      align-items: center;
+    }
+
+    .book__back:hover,
+    .book__back:active {
+      background-color: #3C5887;
+      color: #fff;
+    }
+
+    .book__name {
+      background: #373B44;
+      /* fallback for old browsers */
+      background: -webkit-linear-gradient(to right, #4286f4, #373B44);
+      /* Chrome 10-25, Safari 5.1-6 */
+      background: linear-gradient(to right, #4286f4, #373B44);
+      /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      padding: 1rem;
+      font-family: 'Megrim', sans-serif;
+      font-size: 4rem;
+      color: white;
+      text-align: center;
+      word-spacing: 2px;
+    }
+
+    .book__details {
+      background-color: #eee;
+      padding: 4rem 6rem;
+      font-size: 1.9rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 1.5rem;
+    }
+
+    .book__heading {
+      padding: 2rem 3rem;
+      font-size: 1.9rem;
+
+    }
+
+    .book__description {
+      padding: 2rem 6rem 5rem 6rem;
+      font-size: 1.6rem;
+      line-height: 1.8;
+      text-align: justify;
+    }
+
+    .book__link:link,
+    .book__link:visited {
+      display: block;
+      background-color: #3D609B;
+      color: white;
+      font-size: 1.6rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 1.5rem;
+      text-align: center;
+      transform: scale(1.07) skewX(-20deg);
+      box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s;
+    }
+
+    .book__link:hover,
+    .book__link:active {
+      background-color: #407AD7;
+      transform: scale(1.1) skewX(-20deg);
+    }
+
+    .book__link span {
+      transform: skewX(20deg);
+    }
+
+    .emoji-left {
+      font-size: 2rem;
+      margin-right: 1rem;
+    }
+
+    .emoji-right {
+      font-size: 2rem;
+      margin-left: 1rem;
+    }
+
+    .no-ebook {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>📖 Book Store</h1>
+
+    <figure class="book">
+      <div class="book__ebook">
+        <h5>ebook</h5>
+      </div>
+      <a href="#" class="book__back">
+        <span class="emoji-left">👈</span>Back
+      </a>
+      <div class="book__image">
+        <img
+          src="http://books.google.com/books/content?id=Yz8Fnw0PlEQC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api" />
+      </div>
+      <h2 class="book__name">The Hunger Games</h2>
+      <div class="book__details">
+        <p><span class="emoji-left">📄</span> 496 pages</p>
+        <p><span class="emoji-left">👤</span> Suzanne Collins</p>
+        <p><span class="emoji-left">☺️</span> English Language</p>
+        <p><span class="emoji-left">₹</span> 1,969.00</p>
+      </div>
+
+      <a href="#" class="book__link">
+        <span>Add to shopping card (₹ 1,969.00)</span>
+      </a>
+      <h3 class="book__heading">About Author</h3>
+      <p class="book__description">
+        Suzanne Collins is the author of the groundbreaking Hunger Games trilogy for young adults: The Hunger Games,
+        Catching Fire, and Mockingjay. She is also the author of the picture book Year of the Jungle, a Publishers
+        Weekly best book of the year, and the New York Times bestselling Underland Chronicles series for middle grade
+        readers, which started with Gregor the Overlander. Suzanne lives with her family in Connecticut. You can find
+        her online at www.suzannecollinsbooks.com.
+      </p>
+      <h3 class="book__heading">Description</h3>
+      <p class="book__description">
+        She turns to the future in a world that’s falling apart. The No. 1 New York Times bestseller DIVERGENT – also a
+        major motion picture. For sixteen-year-old Tris, the world changes in a heartbeat when she is forced to make a
+        terrible choice. Turning her back on her family, Tris ventures out, alone, determined to find out where she
+        truly belongs. Shocked by the brutality of her new life, Tris can trust no one. And yet she is drawn to a boy
+        who seems to both threaten and protect her. The hardest choices may yet lie ahead…. The first book in the
+        DIVERGENT series that has swept the globe – selling millions of copies world-wide.
+      </p>
+    </figure>
+
+  </div>
+</body>
+
+</html>
